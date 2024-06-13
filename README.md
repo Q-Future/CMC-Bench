@@ -63,7 +63,7 @@ To provide a comprehensive and high-quality resource for various applications on
 We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T model; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
 
 <div style="width: 100%; text-align: center; margin:auto;">
-      <img style="width:100%" src="fig/mode-all.png">
+      <img style="width:80%" src="fig/mode-all.png">
 </div>
 
 ## Leaderboard of CMC-Bench
@@ -74,7 +74,7 @@ Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoe
 
 The leaderboard for I2T and T2I models are shown below. The I2T models are combined with RealVis as T2I, while T2I models are combined with GPT-4o as I2T. For detailed performance on differnet content types, please check our paper.
 
-<div style="width: 100%; text-align: center; margin:auto;">
+
 | **I2T** | Full-FR↑ | Full-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - |
 | GPT-4o | 2.5646 | 2.0415 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.4394 |
@@ -83,9 +83,9 @@ The leaderboard for I2T and T2I models are shown below. The I2T models are combi
 | MPlugOwl-2 | 2.5556 | 2.0003 | 1.9902 | 2.6413 | 1.7891 | 3.3299 | 2.3844 |
 | LLAVA | 2.5484 | 1.9747 | 1.9815 | 2.6373 | 1.7766 | 3.3695 | 2.3813 |
 | InstructBLIP | 2.5489 | 1.9153 | 1.9858 | 2.5593 | 1.7796 | 3.2888 | 2.3463 |
-</div>
 
-<div style="width: 100%; text-align: center; margin:auto;">
+
+
 | **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - | - | - | 
 | DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
@@ -100,7 +100,7 @@ The leaderboard for I2T and T2I models are shown below. The I2T models are combi
 | SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
 | SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
 | InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
-</div>
+
 
 ## Compare against traditional codecs
 
@@ -132,12 +132,12 @@ Then download the Consistency an Perception evaluation model weight from:
 
 After process above, please ensure your folder look like:
 
+```
 CMC-Bench/
 │
 ├── GT/
 │   ├── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │   
-│
 ├── Ref/
 │   ├── pixel/
 │   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
@@ -145,8 +145,16 @@ CMC-Bench/
 │   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │
 └── Weight/
-    ├── topiq-fr.pth, topiq-nr.pth
+│   ├── topiq-fr.pth, topiq-nr.pth
+```
 
+### Step 1: I2T model
+
+Use I2T model to transform ground image into text.
+
+```
+
+```
 
 
 
