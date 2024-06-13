@@ -71,9 +71,11 @@ Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoe
 <div style="width: 100%; text-align: center; margin:auto;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
-The detailed leaderboard is:
 
-| **T2I** | Full-FR↑ | Full-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
+The leaderboard for I2T and T2I models are shown below. The I2T models are combined with RealVis as T2I, while T2I models are combined with GPT-4o as I2T. For detailed performance on differnet content types, please check our paper.
+
+<div style="width: 100%; text-align: center; margin:auto;">
+| **I2T** | Full-FR↑ | Full-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - |
 | GPT-4o | 2.5646 | 2.0415 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.4394 |
 | ShareGPT | 2.5597 | 2.065 | 1.9872 | 2.7618 | 1.794 | 3.4221 | 2.4316 |
@@ -81,8 +83,9 @@ The detailed leaderboard is:
 | MPlugOwl-2 | 2.5556 | 2.0003 | 1.9902 | 2.6413 | 1.7891 | 3.3299 | 2.3844 |
 | LLAVA | 2.5484 | 1.9747 | 1.9815 | 2.6373 | 1.7766 | 3.3695 | 2.3813 |
 | InstructBLIP | 2.5489 | 1.9153 | 1.9858 | 2.5593 | 1.7796 | 3.2888 | 2.3463 |
+</div>
 
-
+<div style="width: 100%; text-align: center; margin:auto;">
 | **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - | - | - | 
 | DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
@@ -97,6 +100,53 @@ The detailed leaderboard is:
 | SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
 | SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
 | InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
+</div>
+
+## Compare against traditional codecs
+
+CMC paradigms demonstrate an advance in terms of most indicators. The lead in Perception is particularly notable, as it surpasses traditional codecs at extremely low bitrates. However, the advantage in consistency is relatively smaller, achieving a reduction of around 30\% in bitrate compared to traditional methods at 0.02 bpp. The DiffBIR decoder generally shows better performance, while RealVis fits A wider range of bitrates.
+
+In summary, we believe that CMC holds a certain advantage over traditional encoding. However, for implementing LMMs into the next generation of visual signal codecs, further optimization is still required for LMM developers.
+
+<div style="width: 100%; text-align: center; margin:auto;">
+      <img style="width:100%" src="fig/bitrate.png">
+</div>
+
+## Evaluate your model on CMC-Bench
+
+### Step 0: Preparation
+
+First download the images from our Hugging website, including:
+
+[Ground Truth](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench/blob/main/ground-truth.zip). Decompress all file into `GT` folder in this project.
+
+[Pixel Reference](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench/blob/main/reference-pix.zip). Decompress all file into `Ref/pixel` folder in this project.
+
+[Compressed Image Reference](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench/blob/main/reference-image.zip). Decompress all file into `Ref/image` folder in this project.
+
+Then download the Consistency an Perception evaluation model weight from:
+
+[Consistency](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench/blob/main/topiq-fr.pth). Put it into `Weight` folder in this project.
+
+[Perception](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench/blob/main/topiq-nr.pth). Put it into `Weight` folder in this project.
+
+After process above, please ensure your folder look like:
+
+CMC-Bench/
+│
+├── GT/
+│   ├── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+│   
+│
+├── Ref/
+│   ├── pixel/
+│   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+│   └── image/
+│   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+│
+└── Weight/
+    ├── topiq-fr.pth, topiq-nr.pth
+
 
 
 
