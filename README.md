@@ -12,8 +12,10 @@
       <img style="width:100%" src="fig/teaser.png">
  </div>
 
- <h1>CMC-Bench: A New Paradigm of Visual Signal Compression</h1>
+ <h1>CMC-Bench: Towards a New Paradigm of Visual Signal Compression</h1>
+
  _Using large Multimodal Models for Cross Modality Compression_
+
  <div>
       <a href="https://github.com/lcysyzxdxc" target="_blank">Chunyi Li</a><sup>1</sup>,
       <a href="https://multimedia.sjtu.edu.cn/index.php?m=home&c=View&a=index&aid=141" target="_blank">Xiele Wu</a><sup>1</sup>,
@@ -58,17 +60,32 @@ However, at such low bitrates, CMC presents two significant issues that cannot b
 ## CMC-Bench Construction
 To provide a comprehensive and high-quality resource for various applications on the Internet, we carefully curated 1,000 images without compression distortion as the ground truth of CMC-Bench. Including 400 NSIs, 300 SCIs, and 300 AIGIs. The data selection and annoattion detail are attached in out paper.
 
-We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
+We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T model; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
 
 <div style="width: 100%; text-align: center; margin:auto;">
       <img style="width:100%" src="fig/mode-all.png">
 </div>
 
 ## Leaderboard of CMC-Bench
-Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model.
+Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model.
 <div style="width: 100%; text-align: center; margin:auto;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
+The detailed leaderboard is:
+
+|Model	|	Full-FR	|	Full-NR	|	Pixel-FR	|	Pixel-NR	|	Text-FR	|	Text-NR	|	Image-FR	|	Image-NR	|
+|Animate	|	2.2985	|	1.8469	|	1.8246	|	2.4324	|	1.6983	|	3.4979	|	2.2522	|	1.6148	|
+|Dreamlike	|	2.5071	|	1.7892	|	1.9545	|	2.3038	|	1.709	|	3.1588	|	2.4226	|	1.5131	|
+|PG20	|	2.3603	|	2.3695	|	1.8883	|	2.6875	|	1.718	|	3.7438	|	2.2476	|	2.2071	|
+|PG25	|	2.0716	|	2.9194	|	1.7418	|	3.626	|	1.7382	|	3.7299	|	1.9612	|	2.9935	|
+|RealVis	|	2.5646	|	2.0415	|	1.9878	|	2.7815	|	1.7805	|	3.4802	|	2.5033	|	1.8098	|
+|SD15	|	2.4895	|	1.7733	|	1.9422	|	2.1444	|	1.6832	|	2.5318	|	2.4163	|	1.5574	|
+|SDXL	|	2.4184	|	1.6837	|	1.9103	|	1.9724	|	1.7471	|	3.4225	|	2.3482	|	1.5586	|
+|SSD-1B	|	2.4939	|	2.0803	|	1.9611	|	2.4828	|	1.7753	|	3.4796	|	2.4147	|	1.9308	|
+|DiffBIR	|	2.9194	|	2.5803	|	-	|	-	|	-	|	-	|	2.863	|	1.7342	|
+|InstructPix	|	2.1519	|	1.7191	|	-	|	-	|	-	|	-	|	2.3457	|	1.2219	|
+|PASD	|	2.727	|	2.2256	|	-	|	-	|	-	|	-	|	2.6378	|	2.0101	|
+|StableSR	|	2.6232	|	1.4368	|	-	|	-	|	-	|	-	|	2.6088	|	1.4293	|
 
 
 
