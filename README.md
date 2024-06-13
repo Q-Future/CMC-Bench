@@ -17,7 +17,7 @@
  _Using large Multimodal Models for Cross Modality Compression_
 
  <div>
-      <a href="https://github.com/lcysyzxdxc" target="_blank">Chunyi Li</a><sup>1</sup>,
+      <a href="https://lcysyzxdxc.github.io" target="_blank">Chunyi Li</a><sup>1</sup>,
       <a href="https://multimedia.sjtu.edu.cn/index.php?m=home&c=View&a=index&aid=141" target="_blank">Xiele Wu</a><sup>1</sup>,
       <a href="https://teowu.github.io/" target="_blank">Haoning Wu</a><sup>2</sup>,
       <a href="https://medialab.sjtu.edu.cn/author/donghui-feng/" target="_blank">Donghui Feng</a><sup>1</sup>,
@@ -72,7 +72,7 @@ Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoe
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
 
-The leaderboard for I2T and T2I models are shown below. The I2T models are combined with RealVis as T2I, while T2I models are combined with GPT-4o as I2T. For detailed performance on differnet content types, please check our paper.
+The leaderboard for I2T and T2I models are shown below. The I2T models are combined with RealVis as T2I, while T2I models are combined with GPT-4o as I2T. For detail on differnet content types, please check our paper.
 <div align=center>
 
 
@@ -91,7 +91,7 @@ The leaderboard for I2T and T2I models are shown below. The I2T models are combi
 | - | - | - | - | - | - | - | - | - | - | 
 | DiffBIR | 2.9194 | 2.5803 | 2.8630 | 1.7342 | - | - | - | - | 2.6466 |
 | PASD | 2.7270 | 2.2256 | 2.6378 | 2.0101 | - | - | - | - | 2.4942 |
-| PG25 | 2.0716 | 2.9194 | 1.9612 | 2.9935 | 1.7418 | 3.626 | 1.7382 | 3.7299 | 2.3579 |
+| PG25 | 2.0716 | 2.9194 | 1.9612 | 2.9935 | 1.7418 | 3.6260 | 1.7382 | 3.7299 | 2.3579 |
 | RealVis | 2.5646 | 2.0415 | 2.5033 | 1.8098 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.3155 |
 | PG20 | 2.3603 | 2.3695 | 2.2476 | 2.2071 | 1.8883 | 2.6875 | 1.7180 | 3.7438 | 2.2864 |
 | SSD-1B | 2.4939 | 2.0803 | 2.4147 | 1.9308 | 1.9611 | 2.4828 | 1.7753 | 3.4796 | 2.2720 |
@@ -141,12 +141,12 @@ CMC-Bench
 │   
 ├── Ref
 │   ├── pixel
-│       └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+│   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │   └── image
 │       └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │
 └── Weight
-    ├── topiq-fr.pth, topiq-nr.pth
+    └── topiq-fr.pth, topiq-nr.pth
 ```
 
 ### Step 1: I2T model encoding
