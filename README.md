@@ -49,7 +49,7 @@
 
 **Why use LMMs for compression?** Large Multimodal Models (LMMs) support the conversion between multiple modalities, where text consumes much less space than image modalities. By cascading Image-to-Text (I2T) and Text-to-Image (T2I) models, images can be compressed and reconstructed from semantic information. This Cross-Modality Compression (CMC) paradigm operates at the semantic level, which outperforms traditional codecs at the pixel level. It enables easy attainment of 1,000 times compression, and even 10,000 times in extreme cases.
 
-However, at such low bitrates, CMC presents two significant issues that cannot be overlooked. CMC-Bench is designed to evaluate : **(1) Consistency** between the distorted and reference image, **(2) Pcrecption** quality of the distorted image only. Thus, CMC-Bench is designed to identify where LMMs can be further optimized toward the compression task, thereby promote the evolution of visual signal codec protocols.
+However, at such low bitrates, CMC presents two significant issues that cannot be overlooked. CMC-Bench is designed to evaluate : **(1) Consistency** between the distorted and reference image, **(2) Perecption** quality of the distorted image only. Thus, CMC-Bench is designed to identify where LMMs can be further optimized toward the compression task, thereby promote the evolution of visual signal codec protocols.
 
 ## Release
 - [2024/6/13] 🔥 [Github repo](https://github.com/Q-Future/CMC-Bench) for **CMC-Bench** is online. Follow the instruction to join the I2T or T2I model arena!!
@@ -67,25 +67,26 @@ We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode w
 </div>
 
 ## Leaderboard of CMC-Bench
-Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model.
+Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model for **Consistency** and PG25 owns best **Perecption**.
 <div style="width: 100%; text-align: center; margin:auto;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
 The detailed leaderboard is:
 
-|Model	|	Full-FR	|	Full-NR	|	Pixel-FR	|	Pixel-NR	|	Text-FR	|	Text-NR	|	Image-FR	|	Image-NR	|
-|Animate	|	2.2985	|	1.8469	|	1.8246	|	2.4324	|	1.6983	|	3.4979	|	2.2522	|	1.6148	|
-|Dreamlike	|	2.5071	|	1.7892	|	1.9545	|	2.3038	|	1.709	|	3.1588	|	2.4226	|	1.5131	|
-|PG20	|	2.3603	|	2.3695	|	1.8883	|	2.6875	|	1.718	|	3.7438	|	2.2476	|	2.2071	|
-|PG25	|	2.0716	|	2.9194	|	1.7418	|	3.626	|	1.7382	|	3.7299	|	1.9612	|	2.9935	|
-|RealVis	|	2.5646	|	2.0415	|	1.9878	|	2.7815	|	1.7805	|	3.4802	|	2.5033	|	1.8098	|
-|SD15	|	2.4895	|	1.7733	|	1.9422	|	2.1444	|	1.6832	|	2.5318	|	2.4163	|	1.5574	|
-|SDXL	|	2.4184	|	1.6837	|	1.9103	|	1.9724	|	1.7471	|	3.4225	|	2.3482	|	1.5586	|
-|SSD-1B	|	2.4939	|	2.0803	|	1.9611	|	2.4828	|	1.7753	|	3.4796	|	2.4147	|	1.9308	|
-|DiffBIR	|	2.9194	|	2.5803	|	-	|	-	|	-	|	-	|	2.863	|	1.7342	|
-|InstructPix	|	2.1519	|	1.7191	|	-	|	-	|	-	|	-	|	2.3457	|	1.2219	|
-|PASD	|	2.727	|	2.2256	|	-	|	-	|	-	|	-	|	2.6378	|	2.0101	|
-|StableSR	|	2.6232	|	1.4368	|	-	|	-	|	-	|	-	|	2.6088	|	1.4293	|
+| **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
+| DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
+| PASD | 2.727 | 2.2256 | 2.6378 | 2.0101 | - | - | - | - | 2.4942 |
+| PG25 | 2.0716 | 2.9194 | 1.9612 | 2.9935 | 1.7418 | 3.626 | 1.7382 | 3.7299 | 2.3579 |
+| RealVis | 2.5646 | 2.0415 | 2.5033 | 1.8098 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.3155 |
+| PG20 | 2.3603 | 2.3695 | 2.2476 | 2.2071 | 1.8883 | 2.6875 | 1.718 | 3.7438 | 2.2864 |
+| SSD-1B | 2.4939 | 2.0803 | 2.4147 | 1.9308 | 1.9611 | 2.4828 | 1.7753 | 3.4796 | 2.2720 |
+| StableSR | 2.6232 | 1.4368 | 2.6088 | 1.4293 | - | - | - | - | 2.2217 |
+| Dreamlike | 2.5071 | 1.7892 | 2.4226 | 1.5131 | 1.9545 | 2.3038 | 1.709 | 3.1588 | 2.1626 |
+| Animate | 2.2985 | 1.8469 | 2.2522 | 1.6148 | 1.8246 | 2.4324 | 1.6983 | 3.4979 | 2.1283 |
+| SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
+| SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
+| InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
+
 
 
 
