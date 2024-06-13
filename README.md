@@ -4,7 +4,7 @@
  <div>
   <a href="https://github.com/lcysyzxdxc/"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fvqassessment%2FCMC-Bench&count_bg=%23E97EBA&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false"/></a>
   <a href="https://github.com/Q-Future/CMC-Bench"><img src="https://img.shields.io/github/stars/lcysyzxdxc/CMC-Bench"/></a>
-  <a href="https://arxiv.org/pdf/2400.00000"><img src="https://img.shields.io/badge/Arxiv-2406.03070-blue"/></a>
+  <a href="https://arxiv.org/pdf/2400.00000"><img src="https://img.shields.io/badge/Arxiv-2400.00000-blue"/></a>
   <a href="https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench"><img src="https://img.shields.io/badge/Data-Release-green"></a>
  </div>
 
@@ -67,11 +67,14 @@ We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode w
 </div>
 
 ## Leaderboard of CMC-Bench
-Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model for **Consistency** and PG25 owns best **Perecption**.
+Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model for **Consistency** and PG25 owns the most satisfying **Perecption**.
 <div style="width: 100%; text-align: center; margin:auto;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
 The detailed leaderboard is:
+
+**Leaderboard**
+
 
 | **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
@@ -86,6 +89,7 @@ The detailed leaderboard is:
 | SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
 | SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
 | InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
+<div align="left"> 
 
 
 
