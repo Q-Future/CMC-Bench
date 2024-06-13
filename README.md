@@ -39,7 +39,7 @@
  <a href="https://github.com/Q-Future/CMC-Bench"><strong>Project Page</strong></a> |
  <a href="https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench"><strong>Data</strong></a> 
  <div style="width: 100%; text-align: center; margin:auto;">
-      <img style="width:100%" src="fig/spotlight.png">
+      <img style="width:60%" src="fig/spotlight.png">
  </div>
 </div>
 
@@ -47,28 +47,29 @@
 
 **Why use LMMs for compression?** Large Multimodal Models (LMMs) support the conversion between multiple modalities, where text consumes much less space than image modalities. By cascading Image-to-Text (I2T) and Text-to-Image (T2I) models, images can be compressed and reconstructed from semantic information. This Cross-Modality Compression (CMC) paradigm operates at the semantic level, which outperforms traditional codecs at the pixel level. It enables easy attainment of 1,000 times compression, and even 10,000 times in extreme cases.
 
-However, at such low bitrates, CMC presents two significant issues that cannot be overlooked. CMC-Bench is designed to evaluate : **(1) Consistency** between the distorted and reference image, **(2) Pcrecption** quality of the distorted image only.
+However, at such low bitrates, CMC presents two significant issues that cannot be overlooked. CMC-Bench is designed to evaluate : **(1) Consistency** between the distorted and reference image, **(2) Pcrecption** quality of the distorted image only. Thus, CMC-Bench is designed to identify where LMMs can be further optimized toward the compression task, thereby promote the evolution of visual signal codec protocols.
 
 ## Release
 - [2024/6/13] 🔥 [Github repo](https://github.com/Q-Future/CMC-Bench) for **CMC-Bench** is online. Follow the instruction to join the I2T or T2I model arena!!
 - [2024/6/11] 🔥 We release the **CMC-Bench** data and meta information at [Huggingface](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench).
-- [] Update the subjective label for quality assessment task.
-- [] Update all interval image and text data for compression.
+- [To Do] Update the subjective label for quality assessment task.
+- [To Do] Update all interval image and text data for compression.
 
 ## CMC-Bench Construction
-To provide a comprehensive and high-quality resource for various applications on the Internet, we carefully curated 1,000 images without compression distortion as the ground truth of CMC-Bench. Including 400 NSIs, 300 SCIs, and 300 AIGIs.
+To provide a comprehensive and high-quality resource for various applications on the Internet, we carefully curated 1,000 images without compression distortion as the ground truth of CMC-Bench. Including 400 NSIs, 300 SCIs, and 300 AIGIs. The data selection and annoattion detail are attached in out paper.
 
-We employ 6 I2T and 12 T2I models across four compression modes. Namely **Text** mode with only T2I and I2T, **Pixel** mode with several pixels to guide T2I model, **Image** mode with a compressed image as I2t guidance but without I2T model, **Full** mode with all necessary information but most expenses. Thus a I2T+T2I group will be evaluated in 4*2=8 dimensions.
+We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
 
 <div style="width: 100%; text-align: center; margin:auto;">
       <img style="width:100%" src="fig/mode-all.png">
 </div>
 
-## Glance at A-Bench Performance
-
-For I2T models, GPT-4o shows the best perfoemance. For T2I models, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model for all modes.
+## Leaderboard of CMC-Bench
+Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model.
 <div style="width: 100%; text-align: center; margin:auto;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
+
+
 
 </div>
