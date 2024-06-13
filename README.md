@@ -20,7 +20,7 @@
       <a href="https://github.com/lcysyzxdxc" target="_blank">Chunyi Li</a><sup>1</sup>,
       <a href="https://multimedia.sjtu.edu.cn/index.php?m=home&c=View&a=index&aid=141" target="_blank">Xiele Wu</a><sup>1</sup>,
       <a href="https://teowu.github.io/" target="_blank">Haoning Wu</a><sup>2</sup>,
-      <a href="https://medialab.sjtu.edu.cn/author/donghui-feng/" target="_blank">Donghui </a><sup>1</sup>,
+      <a href="https://medialab.sjtu.edu.cn/author/donghui-feng/" target="_blank">Donghui Feng</a><sup>1</sup>,
       <a href="https://zzc-1998.github.io/" target="_blank">Zicheng Zhang</a><sup>1</sup>,
  </div>
 
@@ -62,7 +62,7 @@ To provide a comprehensive and high-quality resource for various applications on
 
 We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T model; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
 
-<div style="width: 100%; text-align: center; margin:center;">
+<div align=center; style="width: 100%>
       <img style="width:80%" src="fig/mode-all.png">
 </div>
 
@@ -73,13 +73,14 @@ Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoe
 </div>
 
 The leaderboard for I2T and T2I models are shown below. The I2T models are combined with RealVis as T2I, while T2I models are combined with GPT-4o as I2T. For detailed performance on differnet content types, please check our paper.
+<div align=center>
 
 
 | **I2T** | Full-FR↑ | Full-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - |
 | GPT-4o | 2.5646 | 2.0415 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.4394 |
-| ShareGPT | 2.5597 | 2.065 | 1.9872 | 2.7618 | 1.794 | 3.4221 | 2.4316 |
-| Qwen | 2.553 | 2.0031 | 1.9917 | 2.6748 | 1.7832 | 3.3679 | 2.3956 |
+| ShareGPT | 2.5597 | 2.065 | 1.9872 | 2.7618 | 1.7940 | 3.4221 | 2.4316 |
+| Qwen | 2.5530 | 2.0031 | 1.9917 | 2.6748 | 1.7832 | 3.3679 | 2.3956 |
 | MPlugOwl-2 | 2.5556 | 2.0003 | 1.9902 | 2.6413 | 1.7891 | 3.3299 | 2.3844 |
 | LLAVA | 2.5484 | 1.9747 | 1.9815 | 2.6373 | 1.7766 | 3.3695 | 2.3813 |
 | InstructBLIP | 2.5489 | 1.9153 | 1.9858 | 2.5593 | 1.7796 | 3.2888 | 2.3463 |
@@ -88,19 +89,19 @@ The leaderboard for I2T and T2I models are shown below. The I2T models are combi
 
 | **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
 | - | - | - | - | - | - | - | - | - | - | 
-| DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
-| PASD | 2.727 | 2.2256 | 2.6378 | 2.0101 | - | - | - | - | 2.4942 |
+| DiffBIR | 2.9194 | 2.5803 | 2.8630 | 1.7342 | - | - | - | - | 2.6466 |
+| PASD | 2.7270 | 2.2256 | 2.6378 | 2.0101 | - | - | - | - | 2.4942 |
 | PG25 | 2.0716 | 2.9194 | 1.9612 | 2.9935 | 1.7418 | 3.626 | 1.7382 | 3.7299 | 2.3579 |
 | RealVis | 2.5646 | 2.0415 | 2.5033 | 1.8098 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.3155 |
-| PG20 | 2.3603 | 2.3695 | 2.2476 | 2.2071 | 1.8883 | 2.6875 | 1.718 | 3.7438 | 2.2864 |
+| PG20 | 2.3603 | 2.3695 | 2.2476 | 2.2071 | 1.8883 | 2.6875 | 1.7180 | 3.7438 | 2.2864 |
 | SSD-1B | 2.4939 | 2.0803 | 2.4147 | 1.9308 | 1.9611 | 2.4828 | 1.7753 | 3.4796 | 2.2720 |
 | StableSR | 2.6232 | 1.4368 | 2.6088 | 1.4293 | - | - | - | - | 2.2217 |
-| Dreamlike | 2.5071 | 1.7892 | 2.4226 | 1.5131 | 1.9545 | 2.3038 | 1.709 | 3.1588 | 2.1626 |
+| Dreamlike | 2.5071 | 1.7892 | 2.4226 | 1.5131 | 1.9545 | 2.3038 | 1.7090 | 3.1588 | 2.1626 |
 | Animate | 2.2985 | 1.8469 | 2.2522 | 1.6148 | 1.8246 | 2.4324 | 1.6983 | 3.4979 | 2.1283 |
 | SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
 | SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
 | InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
-
+</div>
 
 ## Compare against traditional codecs
 
