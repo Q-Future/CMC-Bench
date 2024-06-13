@@ -62,13 +62,13 @@ To provide a comprehensive and high-quality resource for various applications on
 
 We employ 6 I2T and 12 T2I models across four working modes. **(1) Text** mode with only T2I and I2T model; **(2) Pixel** mode with several pixels to guide T2I model; **(3) Image** mode with a compressed image as I2T guidance but without I2T model; **(4) Full** mode with all necessary information but most expenses. A I2T+T2I group will be evaluated in 4*2=8 dimensions.
 
-<div style="width: 100%; text-align: center; margin:auto;">
+<div style="width: 100%; text-align: center; margin:center;">
       <img style="width:80%" src="fig/mode-all.png">
 </div>
 
 ## Leaderboard of CMC-Bench
 Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoemance. Among T2Is, DiffBIR ranks best in terms of **Image** and **Full** but unsupportive at other two modes, while RealVis is the most full-edged model for **Consistency** and PG25 owns the most satisfying **Perecption**.
-<div style="width: 100%; text-align: center; margin:auto;">
+<div style="width: 100%; text-align: center; margin:center;">
   <img style="width:50%" src="fig/radar-i2t.png"><img style="width:50%" src="fig/radar-t2i.png">
 </div>
 
@@ -108,7 +108,7 @@ CMC paradigms demonstrate an advance in terms of most indicators. The lead in Pe
 
 In summary, we believe that CMC holds a certain advantage over traditional encoding. However, for implementing LMMs into the next generation of visual signal codecs, further optimization is still required for LMM developers.
 
-<div style="width: 100%; text-align: center; margin:auto;">
+<div style="width: 100%; text-align: center; margin: center;">
       <img style="width:100%" src="fig/bitrate.png">
 </div>
 
@@ -173,7 +173,7 @@ All decompressed image will be generated in your `Result` folder according to `y
 
 ### Step 3: Evaluation
 
-Use fine-tuned quality model to mesure the performance. Check your model name in the `Result` folder, all modes in it will be evaluated. The script can still be evaluated with incomplete modes, but we recommend using all four modes at once.
+Use fine-tuned quality model to mesure the performance. Check the model name in your `Result` folder, all modes in it will be evaluated. The script can still be evaluated with incomplete modes, but we recommend using all four modes at once.
 
 ```
 python script-evaluate.py --target [t2i_name_in_step_2]
