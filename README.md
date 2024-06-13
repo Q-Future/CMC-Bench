@@ -54,8 +54,8 @@ However, at such low bitrates, CMC presents two significant issues that cannot b
 ## Release
 - [2024/6/13] 🔥 [Github repo](https://github.com/Q-Future/CMC-Bench) for **CMC-Bench** is online. Follow the instruction to join the I2T or T2I model arena!!
 - [2024/6/11] 🔥 We release the **CMC-Bench** data and meta information at [Huggingface](https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench).
-- [To Do] Update the subjective label for quality assessment task.
-- [To Do] Update all interval image and text data for compression.
+- [To Do] [ ] Update the subjective label for quality assessment task.
+- [To Do] [ ] Update all interval image and text data for compression.
 
 ## CMC-Bench Construction
 To provide a comprehensive and high-quality resource for various applications on the Internet, we carefully curated 1,000 images without compression distortion as the ground truth of CMC-Bench. Including 400 NSIs, 300 SCIs, and 300 AIGIs. The data selection and annoattion detail are attached in out paper.
@@ -73,10 +73,18 @@ Radar maps are shown as a quick glance. Among I2Ts, GPT-4o shows the best perfoe
 </div>
 The detailed leaderboard is:
 
-**Leaderboard**
+| **T2I** | Full-FR↑ | Full-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
+| - | - | - | - | - | - | - | - |
+| GPT-4o | 2.5646 | 2.0415 | 1.9878 | 2.7815 | 1.7805 | 3.4802 | 2.4394 |
+| ShareGPT | 2.5597 | 2.065 | 1.9872 | 2.7618 | 1.794 | 3.4221 | 2.4316 |
+| Qwen | 2.553 | 2.0031 | 1.9917 | 2.6748 | 1.7832 | 3.3679 | 2.3956 |
+| MPlugOwl-2 | 2.5556 | 2.0003 | 1.9902 | 2.6413 | 1.7891 | 3.3299 | 2.3844 |
+| LLAVA | 2.5484 | 1.9747 | 1.9815 | 2.6373 | 1.7766 | 3.3695 | 2.3813 |
+| InstructBLIP | 2.5489 | 1.9153 | 1.9858 | 2.5593 | 1.7796 | 3.2888 | 2.3463 |
 
 
 | **T2I** | Full-FR↑ | Full-NR↑ | Image-FR↑ | Image-NR↑ | Pixel-FR↑ | Pixel-NR↑ | Text-FR↑ | Text-NR↑ | Overall↑ |
+| - | - | - | - | - | - | - | - | - | - | 
 | DiffBIR | 2.9194 | 2.5803 | 2.863 | 1.7342 | - | - | - | - | 2.6466 |
 | PASD | 2.727 | 2.2256 | 2.6378 | 2.0101 | - | - | - | - | 2.4942 |
 | PG25 | 2.0716 | 2.9194 | 1.9612 | 2.9935 | 1.7418 | 3.626 | 1.7382 | 3.7299 | 2.3579 |
@@ -89,7 +97,7 @@ The detailed leaderboard is:
 | SDXL | 2.4184 | 1.6837 | 2.3482 | 1.5586 | 1.9103 | 1.9724 | 1.7471 | 3.4225 | 2.1238 |
 | SD15 | 2.4895 | 1.7733 | 2.4163 | 1.5574 | 1.9422 | 2.1444 | 1.6832 | 2.5318 | 2.0891 |
 | InstructPix | 2.1519 | 1.7191 | 2.3457 | 1.2219 | - | - | - | - | 1.9894 |
-<div align="left"> 
+
 
 
 
