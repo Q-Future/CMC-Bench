@@ -32,7 +32,7 @@ def main():
     parser.add_argument("--model_weight", type=str, default="./Weight/",help="Weight of TOPIQ")
     parser.add_argument("--target", type=str, default="real",help="The model you want to evaluate")
     parser.add_argument("--target_path", type=str, default="",help="Self designed distorted path, remain empty")
-    parser.add_argument("--target_path", type=str, default="",help="Self designed distorted path, remain empty")
+    parser.add_argument("--gt_path", type=str, default="",help="Self designed groung truth path, remain empty")
 
     opt = parser.parse_args()
     print('------Evaluating '+opt.target+'------')
@@ -42,6 +42,8 @@ def main():
 
     modes=['full','image','pixel','text']
     
+    frs=[]
+    nrs=[]
 
     for mode in modes:
         out_folder='./Result/'+opt.target+'/'+mode+'/'
@@ -52,9 +54,13 @@ def main():
         print('-------------------'+mode+'-------------------')
         
         score=compute_folder(fr_pref,out_folder,gt_folder)
+        frs.append(np.mean(score))
         print('FR: '+'{:.4f}'.format(np.mean(score)),end='\t')
         score=compute_folder(nr_pref,out_folder,gt_folder)
+        nrs.append(np.mean(score))
         print('NR: '+'{:.4f}'.format(np.mean(score)))
+    
+    print('Overall: '+'{:.4f}'.format(np.mean(frs)*2/3+np.mean(nrs)/3))
 
 if __name__ == "__main__":
 	main()

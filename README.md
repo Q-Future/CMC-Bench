@@ -133,31 +133,66 @@ Then download the Consistency an Perception evaluation model weight from:
 After process above, please ensure your folder look like:
 
 ```
-CMC-Bench/
+CMC-Bench
 │
-├── GT/
+├── GT
 │   ├── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │   
-├── Ref/
-│   ├── pixel/
-│   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
-│   └── image/
-│   │   └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+├── Ref
+│   ├── pixel
+│       └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
+│   └── image
+│       └── AIGI_DALLE3_000.png, AIGI_DALLE3_001.png ...
 │
-└── Weight/
-│   ├── topiq-fr.pth, topiq-nr.pth
+└── Weight
+    ├── topiq-fr.pth, topiq-nr.pth
 ```
 
-### Step 1: I2T model
+### Step 1: I2T model encoding
 
-Use I2T model to transform ground image into text.
-
-```
+Use I2T model to transform ground truth image into text.
 
 ```
+python script-i2t.py --model_name [your_i2t_name] --model_dir [your_i2t_dictionary]
+```
 
+A csv file including all text input will be generated in your `Text` folder according to `your_i2t_name`. The default script use Qwen for I2T. If you only want to test T2I model, please skip this step and directly use `Text/gpt4v.csv`.
 
+### Step 2: T2I model decoding
 
+Use T2I model to reconstruct text back into image.
 
+```
+python script-t2i.py --mode full --input_path [csv_in_step_1] --model_name [your_t2i_name] --model_dir [your_t2i_dictionary]
+python script-t2i.py --mode image --input_path [csv_in_step_1] --model_name [your_t2i_name] --model_dir [your_t2i_dictionary]
+python script-t2i.py --mode pixel --input_path [csv_in_step_1] --model_name [your_t2i_name] --model_dir [your_t2i_dictionary]
+python script-t2i.py --mode text --input_path [csv_in_step_1] --model_name [your_t2i_name] --model_dir [your_t2i_dictionary]
+```
+
+All decompressed image will be generated in your `Result` folder according to `your_t2i_name`. Four subfolder corresponds to four working mode. The default script use RalVis for T2I. If you only want to test T2I model, please empty the `--input_path `; If you only want to test I2T model please empty the ` --model_name` and ` --model_dir`.
+
+### Step 3: Evaluation
+
+Use fine-tuned quality model to mesure the performance. Check your model name in the `Result` folder, all modes in it will be evaluated. The script can still be evaluated with incomplete modes, but we recommend using all four modes at once.
+
+```
+python script-evaluate.py --target [t2i_name_in_step_2]
+```
+
+After finishing validation, you can submit the results via [e-mail](lcysyzxdxc@sjtu.edu.cn) to get your LMM results on CMC-Bench ! (Noted a valid submission should support at least two among four modes.)
 
 </div>
+
+## Contact
+
+Please contact any of the first authors of this paper for queries.
+
+- Chunyi Li, `lcysyzxdxc@sjtu.edu.cn`, @lcysyzxdxc
+
+## Citation
+
+If you find our work interesting, please feel free to cite our paper:
+
+```bibtex
+
+```

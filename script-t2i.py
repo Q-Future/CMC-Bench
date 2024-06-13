@@ -101,7 +101,7 @@ def main():
         image.resize(init_image.size).save(out_path+file)
         cnt=cnt+1
         if cnt%100==0:
-            break        
+            print('------'+str(cnt)+' images are decoded------')       
 
 if __name__ == "__main__":
 	main()
