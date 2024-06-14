@@ -4,7 +4,7 @@
  <div>
   <a href="https://github.com/lcysyzxdxc/"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fvqassessment%2FCMC-Bench&count_bg=%23E97EBA&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false"/></a>
   <a href="https://github.com/Q-Future/CMC-Bench"><img src="https://img.shields.io/github/stars/lcysyzxdxc/CMC-Bench"/></a>
-  <a href="https://arxiv.org/pdf/2400.00000"><img src="https://img.shields.io/badge/Arxiv-2400.00000-blue"/></a>
+  <a href="https://arxiv.org/pdf/2406.09356"><img src="https://img.shields.io/badge/Arxiv-2406.09356-blue"/></a>
   <a href="https://huggingface.co/datasets/lcysyzxdxc/CMC-Bench"><img src="https://img.shields.io/badge/Data-Release-green"></a>
  </div>
 
@@ -195,5 +195,11 @@ Please contact any of the first authors of this paper for queries.
 If you find our work interesting, please feel free to cite our paper:
 
 ```bibtex
-
+@misc{li2024cmcbench,
+      title={CMC-Bench: Towards a New Paradigm of Visual Signal Compression}, 
+      author={Chunyi Li and Xiele Wu and Haoning Wu and Donghui Feng and Zicheng Zhang and Guo Lu and Xiongkuo Min and Xiaohong Liu and Guangtao Zhai and Weisi Lin},
+      year={2024},
+      eprint={2406.09356},
+      archivePrefix={arXiv}
+}
 ```
